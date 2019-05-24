@@ -11,8 +11,11 @@ app.use(bodyParser.json({ type: 'application/**json'}));
 app.use(bodyParser.raw({ type: 'application/vnd.custom-type'}));
 app.use(bodyParser.text({ type: 'text/html'}));
 
+require("./app/routing/apiRoutes.js")(app);
 require("./app/routing/htmlRoutes.js")(app);
 
-
-app.listen(PORT,() => {console.log("App listening on PORT " + PORT)});
+app.listen(PORT,() => {
+    console.log("app listening on http://localhost:" + PORT);
+    
+});
 
