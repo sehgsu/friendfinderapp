@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- Chosen -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
+
     <title>Document</title>
 </head>
 
@@ -142,7 +149,6 @@
       <br>
       <br>
   
-      <!-- Submit Button -->
       <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit"><i class="fas fa-clipboard-check"></i>
        Submit</button>
   
@@ -174,6 +180,7 @@
   
       </div>
     </div>
+    
   
     <script type="text/javascript">
       var config = {
@@ -199,19 +206,20 @@
       // Capture the form inputs
       $("#submit").on("click", (event) => {
         event.preventDefault();
+        
   
         // Form validation
         validateForm = () => {
           var isValid = true;
           $(".form-control").each(() => {
-            if ($(this).val() === "") {
+            if ($(this.target).val() === "") {
               isValid = false;
             }
           });
   
           $(".chosen-select").each(() => {
   
-            if ($(this).val() === "") {
+            if ($(this.target).val() === "") {
               isValid = false;
             }
           });
@@ -223,7 +231,7 @@
           // Create an object for the user"s data
           var userData = {
             name: $("#name").val(),
-            photo: $("#photo").val(),
+            pic: $("#pic").val(),
             scores: [
               $("#q1").val(),
               $("#q2").val(),
@@ -237,6 +245,7 @@
               $("#q10").val()
             ]
           };
+          var currentlURL = window.location.origin;
   
           // AJAX post the data to the friends API.
           $.post("/api/friends", userData, (data) => {
@@ -254,9 +263,6 @@
         }
       });
     </script>
-        <!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script> -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script> -->
-    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> -->
   </body>
   </html>
   
