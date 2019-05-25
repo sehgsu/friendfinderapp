@@ -7,6 +7,6 @@ PSUEDO:
 *begin app logic.
 
 
-Heroku link: //to be inserted
+Heroku link: https://alexhughes-friendfinderapp.herokuapp.com/
 
 dev notes: currently experiencing an issue with my jQuery CDN not working?
