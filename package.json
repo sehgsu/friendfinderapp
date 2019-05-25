@@ -1,0 +1,26 @@
+{
+  "name": "friendfinderapp",
+  "version": "1.0.0",
+  "description": "A custom friend finder app. PSUEDO: *first set up html home and survey with bootstrap/fontawesome/chosen *set up server with npm packages express/body-parser *initialize routes with server, htmlRoutes and html pages  *begin app logic.",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.17.0",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sehgsu/friendfinderapp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sehgsu/friendfinderapp/issues"
+  },
+  "homepage": "https://github.com/sehgsu/friendfinderapp#readme"
+}
