@@ -33,7 +33,7 @@ var friends = [
     },
     {
         name: "Sam",
-        photo: "https://cdn1.thr.com/sites/default/files/imagecache/scale_crop_768_433/2019/02/game_of_thrones-publicity_still_9-h_2019.jpg",
+        pic: "https://cdn1.thr.com/sites/default/files/imagecache/scale_crop_768_433/2019/02/game_of_thrones-publicity_still_9-h_2019.jpg",
         scores: [
             "4",
             "5",

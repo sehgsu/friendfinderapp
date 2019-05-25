@@ -5,7 +5,7 @@ var path = require("path");
 
 
 var PORT = process.env.PORT || 4747;
-var urlencodedParser = bodyParser.urlencoded({extended: true});
+app.use(bodyParser.urlencoded({extended: true}));
 
 app.use(bodyParser.json({ type: 'application/**json'}));
 app.use(bodyParser.raw({ type: 'application/vnd.custom-type'}));
